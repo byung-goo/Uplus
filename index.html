@@ -35,19 +35,18 @@
         /* 5. 플로팅 버튼 (기존 코드 수정) */
 .floating-cta {
     position: fixed;
-    bottom: 20px; /* 바닥에서 띄움 */
-    left: 20px;
-    right: 85px; /* ★ 오른쪽 끝에서 85px 비워서 채널톡 자리 확보 */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 전체 너비로 복구 */
     background: #FF007A;
     color: white;
     text-align: center;
-    padding: 15px 0;
-    font-size: 1.1rem;
+    padding: 18px 0; /* 터치하기 좋게 살짝 두껍게 */
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
-    z-index: 999; /* 채널톡보다 아래에 위치하도록 설정 */
-    border-radius: 30px; /* 둥근 버튼으로 변경하여 세련되게 */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
         
         /* 모바일 대응을 위한 여백 */
@@ -136,17 +135,14 @@
 
   ChannelIO('boot', {
     "pluginKey": "b58cf3f5-9d23-482b-8505-d54f0238d53a",
-    "customLauncherSelector": null,
-    "zIndex": 1000,
-    "appearance": "light",
     "pluginProps": {
       "mobileMessengerProps": {
-        "yOffset": 20, /* 모바일에서 바닥 여백 */
-        "xOffset": 16  /* 모바일에서 오른쪽 여백 */
+        "yOffset": 80, /* 전화 버튼(약 60px) 위로 띄움 */
+        "xOffset": 20
       },
       "desktopMessengerProps": {
-        "yOffset": 20, /* PC에서 바닥 여백 */
-        "xOffset": 20  /* PC에서 오른쪽 여백 */
+        "yOffset": 30,
+        "xOffset": 30
       }
     }
   });
@@ -154,4 +150,5 @@
 </body>
 
 </html>
+
 
